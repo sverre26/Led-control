@@ -4,7 +4,7 @@ import time
 from flask import Flask, render_template, request
 
 #import code from files
-from functions/random.py import randomLed
+from functions.random import randomLed
 
 app = Flask(__name__)
 
@@ -36,27 +36,27 @@ def main():
    # Pass the template data into the template main.html and return it to the user
 	return render_template('main.html')
 
-@app.route("/random")
-def random():
-	#Generate random number between 1 and 3
-	randomnumber = random1.randint(1,3)
-	#Run this code for all pins
-	for pin in pins:
-		#set pin to low
-		GPIO.output(pin, GPIO.LOW)
-	if randomnumber == 1:
-		GPIO.output(37, GPIO.HIGH)
-		time.sleep(randomOnTime)
-		GPIO.output(37, GPIO.LOW)
-	elif randomnumber == 2:
-		GPIO.output(38, GPIO.HIGH)
-		time.sleep(randomOnTime)
-		GPIO.output(38, GPIO.LOW)
-	elif randomnumber == 3:
-		GPIO.output(40, GPIO.HIGH)
-		time.sleep(randomOnTime)
-		GPIO.output(40, GPIO.LOW)
-	return main()
+# @app.route("/random")
+# def random():
+# 	#Generate random number between 1 and 3
+# 	randomnumber = random1.randint(1,3)
+# 	#Run this code for all pins
+# 	for pin in pins:
+# 		#set pin to low
+# 		GPIO.output(pin, GPIO.LOW)
+# 	if randomnumber == 1:
+# 		GPIO.output(37, GPIO.HIGH)
+# 		time.sleep(randomOnTime)
+# 		GPIO.output(37, GPIO.LOW)
+# 	elif randomnumber == 2:
+# 		GPIO.output(38, GPIO.HIGH)
+# 		time.sleep(randomOnTime)
+# 		GPIO.output(38, GPIO.LOW)
+# 	elif randomnumber == 3:
+# 		GPIO.output(40, GPIO.HIGH)
+# 		time.sleep(randomOnTime)
+# 		GPIO.output(40, GPIO.LOW)
+# 	return main()
 
 @app.route("/led1")
 def led1():
