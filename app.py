@@ -10,7 +10,7 @@ from functions.random import randomLed
 from functions.led1 import led1Individual
 from functions.led2 import led2Individual
 from functions.led3 import led3Individual
-from functions.shutdown import shutdown
+from functions.shutdown import shutdownPI
 
 app = Flask(__name__)
 
@@ -57,7 +57,7 @@ def led3():
 @app.route("/shutdown")
 def shutdown():
 	#Shut down raspberry pi
-    shutdown()
+    shutdownPI()
     return render_template('shutdown.html')
 
 if __name__ == "__main__":
