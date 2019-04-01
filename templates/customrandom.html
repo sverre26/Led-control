@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+   <title>Random led lamps</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<center>
+   <h1>RPi Web Server</h1>
+   <br>
+   <form method="get">
+       Time leds are turned on (in seconds): <input type="text" name="customOnTime"><br>
+       Times to repeat: <input type="text" name="timesToRun"><br>
+       Time leds are turned on (in seconds): <input type="text" name="customWaitTime"><br>
+       <input type="submit" value="Submit">
+   </form>
+   </center>
+</body>
+</html>

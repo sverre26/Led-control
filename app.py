@@ -7,10 +7,15 @@ from flask import Flask, render_template, request
 from functions.gpioSetup import gpioSetup
 from functions.clearLeds import clearLeds
 from functions.randomLed import randomLed
+from functions.customRandomLed import customRandomLed
 from functions.led1 import led1Individual
 from functions.led2 import led2Individual
 from functions.led3 import led3Individual
 from functions.shutdown import shutdownPI
+from functions.variables import randomOnTime
+
+#Make customOnTime default to randomOnTime if not set later
+customOnTime = randomOnTime
 
 app = Flask(__name__)
 
@@ -29,6 +34,22 @@ def main():
 def random():
     randomLed()
     return main()
+
+@app.route("/random/custom")
+def randomCustomHTML():
+    #Make customOnTime default to randomOnTime if not set later
+    customOnTime = randomOnTime
+    customWaitTime = randomOnTime
+    #Pass the template data into the template main.html and return it to the user
+    return render_template('customrandom.html')
+
+@app.route("/random/custom/form")
+def randomCustomRun():
+    if timesCompleted <= timesToRun:
+        customRandomLed(customOnTime)
+        timesCompleted += 1
+        time.sleep(customWaitTime)
+    return randomCustomHTML()
 
 @app.route("/led1")
 def led1():
