@@ -1,5 +1,6 @@
 from variables import led2, onTime
 import time
+import RPi.GPIO as GPIO
 
 class led2Individual:
     def __init__(self):

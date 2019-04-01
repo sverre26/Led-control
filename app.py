@@ -32,51 +32,33 @@ def random():
 
 @app.route("/led1")
 def led1():
-	# #Run this code for all pins
-    # #set pin to low
-	# for pin in pins:
-	# 	GPIO.output(pin, GPIO.LOW)
-	# #Turn on led 1
-	# GPIO.output(37, GPIO.HIGH)
-	# #Wait
-	# time.sleep(onTime)
-	# #Turn led 1 off
-	# GPIO.output(37, GPIO.LOW)
+    #Turn off all leds
+    clearLeds()
+    #Turn on and off led1
+    led1Individual()
 	return main()
 
 @app.route("/led2")
 def led2():
-	# #Run this code for all pins
-	# for pin in pins:
-	# 	#set pin to low
-	# 	GPIO.output(pin, GPIO.LOW)
-	# #Turn on led 2
-	# GPIO.output(38, GPIO.HIGH)
-	# #Wait
-	# time.sleep(onTime)
-	# #Turn led 2 off
-	# GPIO.output(38, GPIO.LOW)
+    #Turn off all leds
+    clearLeds()
+    #Turn on and off led2
+    led2Individual()
 	return main()
 
 @app.route("/led3")
 def led3():
-	# #Run this code for all pins
-	# for pin in pins:
-	# 	#set pin to low
-	# 	GPIO.output(pin, GPIO.LOW)
-	# #Turn on led 3
-	# GPIO.output(40, GPIO.HIGH)
-	# #Wait
-	# time.sleep(onTime)
-	# #Turn led 3 off
-	# GPIO.output(40, GPIO.LOW)
+    #Turn off all leds
+    clearLeds()
+    #Turn on and off led3
+    led3Individual()
 	return main()
 
 @app.route("/shutdown")
 def shutdown():
 	#Shut down raspberry pi
-
-	return
+    shutdown()
+    return render_template('shutdown.html')
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=80, debug=True, threaded=True)
