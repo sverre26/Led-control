@@ -6,7 +6,7 @@ from flask import Flask, render_template, request
 #import code from files
 from functions.gpioSetup import gpioSetup
 from functions.clearLeds import clearLeds
-from functions.random import randomLed
+from functions.randomLed import randomLed
 from functions.led1 import led1Individual
 from functions.led2 import led2Individual
 from functions.led3 import led3Individual
