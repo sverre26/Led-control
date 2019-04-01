@@ -27,7 +27,7 @@ def main():
 
 @app.route("/random")
 def random():
-    randomNumber()
+    randomLed()
     return main()
 
 @app.route("/led1")
