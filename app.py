@@ -4,7 +4,7 @@ import time
 from flask import Flask, render_template, request
 
 #import code from files
-from functions.gpio-setup import gpioSetup
+from functions.gpioSetup import gpioSetup
 from functions.clearLeds import clearLeds
 from functions.random import randomLed
 from functions.led1 import led1Individual
@@ -36,7 +36,7 @@ def led1():
     clearLeds()
     #Turn on and off led1
     led1Individual()
-	return main()
+    return main()
 
 @app.route("/led2")
 def led2():
@@ -44,7 +44,7 @@ def led2():
     clearLeds()
     #Turn on and off led2
     led2Individual()
-	return main()
+    return main()
 
 @app.route("/led3")
 def led3():
@@ -52,7 +52,7 @@ def led3():
     clearLeds()
     #Turn on and off led3
     led3Individual()
-	return main()
+    return main()
 
 @app.route("/shutdown")
 def shutdown():
