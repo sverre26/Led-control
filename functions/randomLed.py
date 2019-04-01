@@ -2,12 +2,11 @@ import random
 import time
 import RPi.GPIO as GPIO
 from variables import led1, led2, led3, randomOnTime
-
 class randomLed:
     def __init__(self):
         #Generate random number between 1 and 3
         randomnumber = random.randint(1,3)
-        #Run this code for all pins
+        #Run code only for the pin selected by the random number
         if randomnumber == 1:
             GPIO.output(led1, GPIO.HIGH)
             time.sleep(randomOnTime)
