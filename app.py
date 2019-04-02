@@ -14,6 +14,7 @@ from functions.led3 import led3Individual
 from functions.shutdown import shutdownPI
 from functions.variables import randomOnTime
 from functions.ledsOn import ledsOn
+from functions.randomInverted import randomInverted
 
 #Make customOnTime default to randomOnTime if not set later
 customOnTime = randomOnTime
@@ -33,8 +34,17 @@ def main():
 
 @app.route("/random")
 def random():
+	#Turn off all leds
+	clearLeds()
+	#Turn on random led
     randomLed()
     return main()
+
+@app.route("/random/inverse")
+def random():
+	ledsOn()
+	randomInverted()
+	return main()
 
 @app.route("/random/custom")
 def randomCustomHTML():
