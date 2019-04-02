@@ -4,3 +4,4 @@ led3 = 40
 randomOnTime = 3
 randomOffTime = 3
 onTime = 3
+shutdownSwitch = 5

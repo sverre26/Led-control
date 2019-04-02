@@ -11,3 +11,4 @@ class gpioSetup:
         GPIO.setup(led1, GPIO.OUT)
         GPIO.setup(led2, GPIO.OUT)
         GPIO.setup(led3, GPIO.OUT)
+        GPIO.setup(shutdownSwitch, GPIO.OUT)
