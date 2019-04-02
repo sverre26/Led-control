@@ -5,3 +5,4 @@ shutdownSwitch = 3
 randomOnTime = 3
 randomOffTime = 3
 onTime = 3
+offTime = 3

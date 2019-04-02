@@ -15,6 +15,9 @@ from functions.shutdown import shutdownPI
 from functions.variables import randomOnTime
 from functions.ledsOn import ledsOn
 from functions.randomInverted import randomInverted
+from functions.led1Inverted import led1Inverted
+from functions.led2Inverted import led2Inverted
+from functions.led3Inverted import led3Inverted
 
 #Make customOnTime default to randomOnTime if not set later
 customOnTime = randomOnTime
