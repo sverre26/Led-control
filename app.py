@@ -43,8 +43,8 @@ def random():
     randomLed()
     return main()
 
-@app.route("/random/inverse")
-def random():
+@app.route("/random/inverted")
+def invertedRandom():
 	#Turn on all leds
 	ledsOn()
 	#Turn off one led before turning it on again
@@ -75,6 +75,14 @@ def led1():
     led1Individual()
     return main()
 
+@app.route("/led1/inverted")
+def invertedLed1():
+	#Turn on all leds
+	ledsOn()
+	#Turn off led1
+	led1Inverted()
+    return main()
+
 @app.route("/led2")
 def led2():
     #Turn off all leds
@@ -83,12 +91,28 @@ def led2():
     led2Individual()
     return main()
 
+@app.route("/led2/inverted")
+def invertedLed2():
+	#Turn on all leds
+	ledsOn()
+	#Turn off led2
+	led2Inverted()
+    return main()
+
 @app.route("/led3")
 def led3():
     #Turn off all leds
     clearLeds()
     #Turn on and off led3
     led3Individual()
+    return main()
+
+@app.route("/led3/inverted")
+def invertedLed3():
+	#Turn on all leds
+	ledsOn()
+	#Turn off led3
+	led2Inverted()
     return main()
 
 @app.route("/shutdown")
