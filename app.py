@@ -42,7 +42,9 @@ def random():
 
 @app.route("/random/inverse")
 def random():
+	#Turn on all leds
 	ledsOn()
+	#Turn off one led before turning it on again
 	randomInverted()
 	return main()
 
