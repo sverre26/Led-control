@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 from subprocess import call
+from variables import shutdownSwitch
 
 class shutdownPI:
     def __init__(self):
